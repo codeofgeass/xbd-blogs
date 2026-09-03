@@ -1,0 +1,69 @@
+# 站点基本设置 —— 想改博客名字,改 title 就行
+baseURL: "https://xbd-blogs.pages.dev/"
+title: "我的博客"
+theme: "PaperMod"
+defaultContentLanguage: "zh"
+hasCJKLanguage: true
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: true
+buildExpired: false
+
+pagination:
+  pagerSize: 5
+
+minify:
+  disableXML: true
+
+# 顶部导航菜单
+menu:
+  main:
+    - name: 文章
+      url: /posts/
+      weight: 1
+    - name: 归档
+      url: /archives/
+      weight: 5
+    - name: 关于
+      url: /about/
+      weight: 10
+
+params:
+  defaultTheme: auto          # 自动跟随系统深浅色
+  DateFormat: "2006年1月2日 15:04"   # 文章显示的发布时间格式(精确到分)
+  ShowReadingTime: true       # 显示阅读时长
+  ShowPostNavLinks: true      # 上一篇/下一篇
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true   # 代码块一键复制
+  ShowRssButtonInSectionTermList: true
+  displayFullLangName: true
+
+  # 首页欢迎语
+  homeInfoParams:
+    Title: 你好,欢迎来到我的博客 👋
+    Content: >
+      这里记录我的想法、笔记和生活。
+
+      写新文章:在 `content/posts/` 下新建 Markdown 文件即可。
+
+  # 社交链接(不需要就删掉)
+  socialIcons:
+    - name: github
+      url: "https://github.com/"
+    - name: email
+      url: "mailto:me@example.com"
+
+  # 在页脚加一行小字(可留空删除)
+  # footer: © 2026, All Rights Reserved
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true            # 允许在 Markdown 里写 HTML
+  highlight:
+    codeFences: true
+    style: dracula
+    lineNos: false
+
+# 生成草稿:把文件 front matter 里的 draft: false 改掉即可
