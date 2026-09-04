@@ -1,0 +1,6 @@
+{{- /* 覆盖主题同名文件:在每篇文章正文末尾自动追加最后更新时间 */}}
+{{- if not .Lastmod.IsZero }}
+<p class="post-lastmod">
+  最后更新:{{ .Lastmod | time.Format (default "2006年1月2日 15:04" site.Params.DateFormat) }}
+</p>
+{{- end }}

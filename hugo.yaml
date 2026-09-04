@@ -6,6 +6,13 @@ defaultContentLanguage: "zh"
 hasCJKLanguage: true
 enableInlineShortcodes: true
 enableRobotsTXT: true
+enableGitInfo: true        # 从 git 提交记录自动读取文章更新时间
+
+# 日期自动推断:没写 date 的文章,发布时间取 git 提交时间(再退回文件保存时间)
+frontmatter:
+  date: ["date", ":git", ":fileModTime"]
+  lastmod: ["lastmod", ":git", ":fileModTime"]
+
 buildDrafts: false
 buildFuture: true
 buildExpired: false
