@@ -66,6 +66,8 @@ params:
 
 markup:
   goldmark:
+    extensions:
+      hardWraps: true         # 回车即换行,不需要空行分段
     renderer:
       unsafe: true            # 允许在 Markdown 里写 HTML
   highlight:
